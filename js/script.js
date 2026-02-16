@@ -42,3 +42,35 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 
 */
+
+//DATA
+//generatore di numeri
+
+
+//5 input
+
+//SELEZIONE DEI NODI
+
+//
+const numberList = document.getElementById('numbers-list')
+
+//-IL software genera 5 numeri casuali
+
+function NumbGen50 (){
+    
+    let randomNumb =[]
+    
+    for (let i = 1; i <= 5; i++) {
+        let numb = Math.floor(Math.random()* 50) + 0
+        let element = numb
+        randomNumb.push(` ${element}`)
+        
+        
+        
+    }
+    return randomNumb
+}
+
+
+
+numberList.innerText = NumbGen50()
