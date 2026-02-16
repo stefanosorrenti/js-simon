@@ -34,7 +34,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 -il softaware comincia a contare 30 secondi
 -dopo 30 secondi scompaiono i numeri e appaiono 5 input
 -l'utente inserisce i numeri nell'ordine che preferisce
--dopo il software dice 
+-il software analizza i numeri inseriti dall'utente
     -SE I numeri che ha inserito l'utente sono corrispondono a quelli generati dal PC
         -Ti mostro QUANTI e QUALI di questi numeri sono uguali
     ALTRIMENTI
@@ -51,7 +51,37 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 //SELEZIONE DEI NODI
 const numberList = document.getElementById('numbers-list')
-const inputs = document.getElementById('answers-form')
+const FormInputs = document.getElementById('answers-form')
+const inputs = document.querySelectorAll('input')
+
+
+
+function getInputValues (inputElements){
+    
+    const inputValues =[]
+    for (let index = 0; index < inputElements.length; index++) {
+        const element = inputElements[index];
+        inputValues.push(element.value)
+        
+        
+    }
+    
+    return inputValues
+
+}
+
+console.log(getInputValues(inputs));
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,9 +100,9 @@ function NumbGen50 (){
         
         
         
-    }
+    }    
     return randomNumb //ritorno della funzione
-}
+}    
 
 
 numberList.innerText = NumbGen50() //stampo in pagina inserendo il return della funzione in HTML
@@ -82,8 +112,25 @@ numberList.innerText = NumbGen50() //stampo in pagina inserendo il return della 
 setTimeout(function(){
     //-dopo 30 secondi scompaiono i numeri
     numberList.className = 'd-none'
-
-    //e appaiono 5 input
-    inputs.className = ''
     
-}, 5000)
+    //e appaiono 5 input
+    FormInputs.className = ''
+    
+}, 5000)    
+
+
+
+//il software analizza i numeri inseriti dall'utente
+
+
+FormInputs.addEventListener('submit', function(e){
+    e.preventDefault()
+    
+    //SE I numeri che ha inserito l'utente sono corrispondono a quelli generati dal PC
+    
+    
+
+
+})
+
+
