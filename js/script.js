@@ -106,7 +106,7 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
     let correctNumb = [] //variabili d'appoggio dei numeri giusti
     let incorrectNumb = [] //variabili d'appoggio dei numeri sbagliati
 
-    for (i = 0; i < value.length; i++) { //ciclo tra la lunghezza dei numeri inseriti dall'utente
+    for (let i = 0; i < value.length; i++) { //ciclo tra la lunghezza dei numeri inseriti dall'utente
         //console.log(pcNumbers[i]);
         //console.log('sono nel secondo for');
         
@@ -116,7 +116,7 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
             //ALTRIMENTI
 
         } else { //-inserisco il numero nei 'numeri sbagliati'
-            incorrectNumb.push(pcNumbers[i])
+            incorrectNumb.push(value[i])
         }
     }
 
