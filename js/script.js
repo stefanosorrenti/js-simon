@@ -42,7 +42,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
         -inserisco il numero nei 'numeri sbagliati'
 
 -stampo quanti e quali numeri hai indovinato
--stampo quali numeri non hai indovinato
+
 
 
 */
@@ -88,54 +88,55 @@ console.log(pcNumbers);
 //- QUANDO L'UTENTE CONFERMA il software analizza i numeri inseriti dall'utente
 
 FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submit, nel nostro caso quando l'utente preme il bottone
-    
+
     e.preventDefault() //disattiviamo il comportamente naturale del form
     //console.log('Levento è stato cliccato');
 
     let value = [] //variabile d'appoggio per trovare e riutilizzare i valori del nodo input
 
-    for(i = 0; i < inputs.length; i++) { //cicliamo per la sua lunghezza
-        
-        value.push(parseInt(inputs[i].value)) // pushiamo nella variabile d'appoggio il i nostri value (con parseint per renderli numeri)
-        
-    }
-    
-   //console.log(`Sono nel ciclo for ${value}`);
+    for (i = 0; i < inputs.length; i++) { //cicliamo per la sua lunghezza
 
-//il software analizza i numeri uno per uno
+        value.push(parseInt(inputs[i].value)) // pushiamo nella variabile d'appoggio il i nostri value (con parseint per renderli numeri)
+
+    }
+
+    //console.log(`Sono nel ciclo for ${value}`);
+
+    //il software analizza i numeri uno per uno
     let correctNumb = [] //variabili d'appoggio dei numeri giusti
     let incorrectNumb = [] //variabili d'appoggio dei numeri sbagliati
 
-  for( i = 0; i < pcNumbers.length && value.length; i++){ //ciclo tra la lunghezza dei numeri generati e  tra quella dei numeri inseriti dall'utente
-    //console.log(pcNumbers[i]);
-    //console.log('sono nel secondo for');
+    for (i = 0; i < pcNumbers.length && value.length; i++) { //ciclo tra la lunghezza dei numeri generati e  tra quella dei numeri inseriti dall'utente
+        //console.log(pcNumbers[i]);
+        //console.log('sono nel secondo for');
 
-    //-SE il numero analizzato è uguale a quello inserito dall'utente
-    if (pcNumbers[i] === value[i]) { 
-        correctNumb.push(value[i]) //inserisco nei numeri giusti
-    //ALTRIMENTI
+        //-SE il numero analizzato è uguale a quello inserito dall'utente
+        if (pcNumbers[i] === value[i]) {
+            correctNumb.push(value[i]) //inserisco nei numeri giusti
+            //ALTRIMENTI
 
-    } else { //-inserisco il numero nei 'numeri sbagliati'
-        incorrectNumb.push(pcNumbers[i])
-    }   
-} 
+        } else { //-inserisco il numero nei 'numeri sbagliati'
+            incorrectNumb.push(pcNumbers[i])
+        }
+    }
 
 
     //-stampo quanti e quali numeri hai indovinato
+    message.innerText = `
+    I numeri erano: ${pcNumbers}
+    Hai indovinito ${correctNumb}, per un totale di ${correctNumb.length} numeri.
+    `
 
 
-    
-    console.log(`Hai sbagliato ${incorrectNumb.length} numeri.`);
-    console.log(`Hai indovinato ${correctNumb.length} numeri.`);
-    
-    console.log(`Numeri corretti: ${correctNumb}`);
-    
-    console.log(`Numeri incorretti: ${incorrectNumb}`);
-    
-   
-   
-   
-   
+    //console.log(`Hai sbagliato ${incorrectNumb.length} numeri.`);
+    //console.log(`Hai indovinato ${correctNumb.length} numeri.`);
+    //console.log(`Numeri corretti: ${correctNumb}`);
+    //console.log(`Numeri incorretti: ${incorrectNumb}`);
+
+
+
+
+
 
 })
 
