@@ -99,14 +99,24 @@ FormInputs.addEventListener('submit', function (e) {
     
    console.log(`Sono nel ciclo for ${value}`);
 
+    let incorrectNumb = []
+    let correctNumb = []
   for( i = 0; i < pcNumbers.length && value.length; i++){
-    console.log(pcNumbers[i]);
-    
-    console.log(value[i]);
-    
-    
+    //console.log(pcNumbers[i]);
+    //console.log('sono nel secondo for');
 
-   } 
+    if (pcNumbers[i] === value[i]) {
+        correctNumb.push(value[i]) 
+        
+    } else {
+        incorrectNumb.push(pcNumbers[i])
+    }   
+} 
+
+    console.log(incorrectNumb);
+    console.log(correctNumb);
+    
+   
    
    
    
