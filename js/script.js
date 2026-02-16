@@ -110,11 +110,12 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
         //console.log(pcNumbers[i]);
         //console.log('sono nel secondo for');
         
-        //-SE il tra i numeri generati ci sono inclusi i numeri inseriti dall'utente.
+        //-SE tra i numeri generati ci sono inclusi i numeri inseriti dall'utente.
         if (pcNumbers.includes(value[i])) {
             correctNumb.push(value[i]) //inserisco nei numeri giusti
-            //ALTRIMENTI
-
+            
+        
+        //ALTRIMENTI
         } else { //-inserisco il numero nei 'numeri sbagliati'
             incorrectNumb.push(value[i])
         }
