@@ -123,7 +123,7 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
 
     //-stampo quanti e quali numeri hai indovinato
     message.innerText = `
-    I numeri erano: ${pcNumbers}
+    I numeri erano: ${pcNumbers}.
     Hai indovinato i numeri ${correctNumb}, per un totale di ${correctNumb.length} numeri.
     `
 
@@ -167,7 +167,7 @@ function NumbGen50() {
     return randomNumb //ritorno della funzione
 }
 
-//funzione che fornisce il value dell'input
+
 
 
 
