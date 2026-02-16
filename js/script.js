@@ -78,7 +78,7 @@ setTimeout(function () {
     //e appaiono 5 input
     FormInputs.className = '' //(l'utente inserisce i numeri nell'ordine che preferisce e conferma)
 
-}, 1000)
+}, 30000)
 
 console.log(pcNumbers);
 
@@ -124,7 +124,7 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
     //-stampo quanti e quali numeri hai indovinato
     message.innerText = `
     I numeri erano: ${pcNumbers}
-    Hai indovinito ${correctNumb}, per un totale di ${correctNumb.length} numeri.
+    Hai indovinato i numeri ${correctNumb}, per un totale di ${correctNumb.length} numeri.
     `
 
 
