@@ -33,104 +33,73 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 -IL software genera 5 numeri casuali e li stampa in pagina
 -il softaware comincia a contare 30 secondi
 -dopo 30 secondi scompaiono i numeri e appaiono 5 input
--l'utente inserisce i numeri nell'ordine che preferisce
--il software analizza i numeri inseriti dall'utente
-    -SE I numeri che ha inserito l'utente sono corrispondono a quelli generati dal PC
-        -Ti mostro QUANTI e QUALI di questi numeri sono uguali
+-l'utente inserisce i numeri nell'ordine che preferisce e conferma
+- quando conferma il software analizza i numeri uno per uno
+    -SE il numero analizzato è uguale a quello inserito dall'utente
+        -Ti mostro il numero in pagina
     ALTRIMENTI
-        -Ti mostro quali e quanti numeri di questi sono sbagliati
+        -non te lo mostro e contrinuo a cercare
 
 
 */
 
-//DATA
-//generatore di numeri
 
-
-//5 input
 
 //SELEZIONE DEI NODI
-const numberList = document.getElementById('numbers-list')
-const FormInputs = document.getElementById('answers-form')
-const inputs = document.querySelectorAll('input')
+const numberList = document.getElementById('numbers-list') //lista dei numeri
+const FormInputs = document.getElementById('answers-form') //form
+const inputs = document.querySelectorAll('input') //input dentro al form
 
 
-
-function getInputValues (inputElements){
-    
-    const inputValues =[]
-    for (let index = 0; index < inputElements.length; index++) {
-        const element = inputElements[index];
-        inputValues.push(element.value)
-        
-        
-    }
-    
-    return inputValues
-
-}
-
-console.log(getInputValues(inputs));
-
-
-
-
-
-
-
-
-
-
+//DATA
+const pcNumbers = NumbGen50() //Generatore di 5 numeri casuali
 
 
 
 
 
 //-IL software genera 5 numeri casuali e li stampa in pagina
-
-//funzione per stampare i numeri
-function NumbGen50 (){
-    
-    let randomNumb =[] //variabile d'appoggio 
-    
-    for (let i = 1; i <= 5; i++) { //ciclo per stampare 5 volte i numeri casuali
-        let numb = Math.floor(Math.random()* 50) + 0 //massimo fino a 50
-        let element = numb
-        randomNumb.push(` ${element}`)
-        
-        
-        
-    }    
-    return randomNumb //ritorno della funzione
-}    
+numberList.innerText = pcNumbers
 
 
-numberList.innerText = NumbGen50() //stampo in pagina inserendo il return della funzione in HTML
 
 //il softaware comincia a contare 30 secondi
 
-setTimeout(function(){
+setTimeout(function () {
     //-dopo 30 secondi scompaiono i numeri
     numberList.className = 'd-none'
-    
+
     //e appaiono 5 input
-    FormInputs.className = ''
-    
-}, 5000)    
+    FormInputs.className = '' //(l'utente inserisce i numeri nell'ordine che preferisce e conferma)
+
+}, 5000)
 
 
 
-//il software analizza i numeri inseriti dall'utente
+//- QUANDO CONFERMA il software analizza i numeri inseriti dall'utente
+
+/* FormInputs.addEventListener('submit',) */
 
 
-FormInputs.addEventListener('submit', function(e){
-    e.preventDefault()
-    
-    //SE I numeri che ha inserito l'utente sono corrispondono a quelli generati dal PC
-    
-    
 
 
-})
 
+
+//FUNCTIONS
+
+//funzione generare 5 numeri casuali
+function NumbGen50() {
+
+    let randomNumb = [] //variabile d'appoggio 
+
+    for (let i = 1; i <= 5; i++) { //ciclo per stampare 5 volte i numeri casuali
+        let numb = Math.floor(Math.random() * 50) + 0 //massimo fino a 50
+        let element = numb
+        randomNumb.push(` ${element}`)
+
+
+
+    }
+    return randomNumb //ritorno della funzione
+}
 
