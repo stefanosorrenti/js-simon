@@ -4,10 +4,13 @@
 /*
 
 Descrizione:
-Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi.
-Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
+Visualizzare in pagina 5 numeri casuali. 
+Da lì parte un timer di 30 secondi.
+Dopo 30 secondi i numeri scompaiono 
+e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
 
-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+Dopo che sono stati inseriti i 5 numeri, 
+il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che ne indovini il più possibile.
 
@@ -21,5 +24,21 @@ Pensate prima in italiano.
 Dividete in piccoli problemi la consegna.
 Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"
+
+*/
+
+//HUMAN CODE
+
+/*
+-IL software genera 5 numeri casuali
+-il softaware comincia a contare 30 secondi
+-dopo 30 secondi scompaiono i numeri e appaiono 5 input
+-l'utente inserisce i numeri nell'ordine che preferisce
+-dopo il software dice 
+    -SE I numeri che ha inserito l'utente sono corrispondono a quelli generati dal PC
+        -Ti mostro QUANTI e QUALI di questi numeri sono uguali
+    ALTRIMENTI
+        -Ti mostro quali e quanti numeri di questi sono sbagliati
+
 
 */
