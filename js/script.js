@@ -106,11 +106,11 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
     let correctNumb = [] //variabili d'appoggio dei numeri giusti
     let incorrectNumb = [] //variabili d'appoggio dei numeri sbagliati
 
-    for (i = 0; i < value.length; i++) { //ciclo tra la lunghezza dei numeri generati e  tra quella dei numeri inseriti dall'utente
+    for (i = 0; i < value.length; i++) { //ciclo tra la lunghezza dei numeri inseriti dall'utente
         //console.log(pcNumbers[i]);
         //console.log('sono nel secondo for');
         
-        //-SE il numero analizzato è uguale a quello inserito dall'utente
+        //-SE il tra i numeri generati ci sono inclusi i numeri inseriti dall'utente.
         if (pcNumbers.includes(value[i])) {
             correctNumb.push(value[i]) //inserisco nei numeri giusti
             //ALTRIMENTI
