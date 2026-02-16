@@ -30,7 +30,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //HUMAN CODE
 
 /*
--IL software genera 5 numeri casuali
+-IL software genera 5 numeri casuali e li stampa in pagina
 -il softaware comincia a contare 30 secondi
 -dopo 30 secondi scompaiono i numeri e appaiono 5 input
 -l'utente inserisce i numeri nell'ordine che preferisce
@@ -54,23 +54,23 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //
 const numberList = document.getElementById('numbers-list')
 
-//-IL software genera 5 numeri casuali
+//-IL software genera 5 numeri casuali e li stampa in pagina
 
+//funzione per stampare i numeri
 function NumbGen50 (){
     
-    let randomNumb =[]
+    let randomNumb =[] //variabile d'appoggio 
     
-    for (let i = 1; i <= 5; i++) {
-        let numb = Math.floor(Math.random()* 50) + 0
+    for (let i = 1; i <= 5; i++) { //ciclo per stampare 5 volte i numeri casuali
+        let numb = Math.floor(Math.random()* 50) + 0 //massimo fino a 50
         let element = numb
         randomNumb.push(` ${element}`)
         
         
         
     }
-    return randomNumb
+    return randomNumb //ritorno della funzione
 }
 
 
-
-numberList.innerText = NumbGen50()
+numberList.innerText = NumbGen50() //stampo in pagina inserendo il return della funzione in HTML
