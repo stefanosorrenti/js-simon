@@ -4,10 +4,11 @@
 /*
 
 Descrizione:
-Visualizzare in pagina 5 numeri casuali. 
-Da lì parte un timer di 30 secondi.
-Dopo 30 secondi i numeri scompaiono 
-e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
+Visualizzare in pagina 5 numeri casuali. (X)
+Da lì parte un timer di 30 secondi. (X)
+Dopo 30 secondi i numeri scompaiono (X)
+e appaiono invece 5 input (X)
+in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce. (X)
 
 Dopo che sono stati inseriti i 5 numeri, 
 il software dice quanti e quali dei numeri da indovinare sono stati individuati.
@@ -48,13 +49,15 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //SELEZIONE DEI NODI
 const numberList = document.getElementById('numbers-list') //lista dei numeri
 const FormInputs = document.getElementById('answers-form') //form
-const inputs = document.querySelectorAll('input') //input dentro al form
+const inputs = document.querySelectorAll('.form-control') //input dentro al form
+let message = document.getElementById('message') //messaggio finale
+
+
+
 
 
 //DATA
 const pcNumbers = NumbGen50() //Generatore di 5 numeri casuali
-
-
 
 
 
@@ -72,13 +75,54 @@ setTimeout(function () {
     //e appaiono 5 input
     FormInputs.className = '' //(l'utente inserisce i numeri nell'ordine che preferisce e conferma)
 
-}, 5000)
+}, 1000)
+
+console.log(pcNumbers);
+
 
 
 
 //- QUANDO CONFERMA il software analizza i numeri inseriti dall'utente
+FormInputs.addEventListener('submit', function (e) {
+    e.preventDefault()
+    console.log('Levento è stato cliccato');
+    let value = []
+    for(i = 0; i < inputs.length; i++) {
+        value.push(parseInt(inputs[i].value))
+        
+        
+        
+        
+        
+        
+    }
+    
+   console.log(`Sono nel ciclo for ${value}`);
 
-/* FormInputs.addEventListener('submit',) */
+  for( i = 0; i < pcNumbers.length && value.length; i++){
+    console.log(pcNumbers[i]);
+    
+    console.log(value[i]);
+    
+    
+
+   } 
+   
+   
+   
+
+})
+
+
+
+
+//-Deve leggere ciascun numero genarato
+//-Leggere ciascun numero inserito
+//SE i numeri sono uguali
+//pushare il numero dentro un array
+//inserire l'array nel testo
+//ALTRIMENTI
+//COTINUARE A LEGGERE
 
 
 
@@ -94,12 +138,17 @@ function NumbGen50() {
 
     for (let i = 1; i <= 5; i++) { //ciclo per stampare 5 volte i numeri casuali
         let numb = Math.floor(Math.random() * 50) + 0 //massimo fino a 50
-        let element = numb
-        randomNumb.push(` ${element}`)
+
+        randomNumb.push(numb)
 
 
 
     }
     return randomNumb //ritorno della funzione
 }
+
+//funzione che fornisce il value dell'input
+
+
+
 
