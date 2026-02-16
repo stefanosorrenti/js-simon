@@ -50,9 +50,11 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //5 input
 
 //SELEZIONE DEI NODI
-
-//
 const numberList = document.getElementById('numbers-list')
+const inputs = document.getElementById('answers-form')
+
+
+
 
 //-IL software genera 5 numeri casuali e li stampa in pagina
 
@@ -74,3 +76,14 @@ function NumbGen50 (){
 
 
 numberList.innerText = NumbGen50() //stampo in pagina inserendo il return della funzione in HTML
+
+//il softaware comincia a contare 30 secondi
+
+setTimeout(function(){
+    //-dopo 30 secondi scompaiono i numeri
+    numberList.className = 'd-none'
+
+    //e appaiono 5 input
+    inputs.className = ''
+    
+}, 5000)
