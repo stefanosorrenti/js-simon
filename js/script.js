@@ -154,7 +154,7 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
 
 /**
  * #Random Number Generator
- * This function allows you to generate random numbers by setting a range
+ * This function generates 5 random numbers by settings a range
  * @param {number} min -Enter the starting number for generation
  * @param {number} max -Enter the final number for generation
  * @returns {object}
@@ -174,6 +174,7 @@ function NumbGen50(min, max) {
     }
     return randomNumb //ritorno della funzione
 }
+
 
 
 
