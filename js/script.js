@@ -60,7 +60,7 @@ let message = document.getElementById('message') //messaggio finale
 
 
 //DATA
-const pcNumbers = NumbGen50() //Generatore di 5 numeri casuali
+const pcNumbers = NumbGen50(1, 50) //Generatore di 5 numeri casuali
 
 
 
@@ -152,13 +152,20 @@ FormInputs.addEventListener('submit', function (e) { //ascoltiamo l'evento submi
 
 //FUNCTIONS
 
+/**
+ * #Random Number Generator
+ * This function allows you to generate random numbers by setting a range
+ * @param {number} min -Enter the starting number for generation
+ * @param {number} max -Enter the final number for generation
+ * @returns {object}
+ */
 //funzione generare 5 numeri casuali
-function NumbGen50() {
+function NumbGen50(min, max) {
 
     let randomNumb = [] //variabile d'appoggio 
 
     for (let i = 1; i <= 5; i++) { //ciclo per stampare 5 volte i numeri casuali
-        let numb = Math.floor(Math.random() * 50) + 1 //massimo fino a 50
+        let numb = Math.floor(Math.random() * max) + min //massimo fino a 50
 
         randomNumb.push(numb)
 
@@ -167,6 +174,7 @@ function NumbGen50() {
     }
     return randomNumb //ritorno della funzione
 }
+
 
 
 
